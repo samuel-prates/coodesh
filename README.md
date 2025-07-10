@@ -1,4 +1,7 @@
 # API com integração de IA
+
+Este projeto implementa uma API simples para análise de texto com integração de inteligência artificial para detecção de sentimento.
+
 ### Objetivo
 Criar uma API simples que:
 	1.	Analisa um texto de entrada.
@@ -14,26 +17,57 @@ Crie um endpoint POST /analyze-text que receba um JSON com o seguinte formato:
 ```
 A resposta da API deve conter:
 - A contagem total de palavras.
-- As 5 palavras mais frequentes (ignorando stopwords, se possível).
-- Um resumo de sentimento do texto, utilizando alguma API pública de IA como:
-  - OpenAI (ex: `gpt-3.5-turbo` ou `gpt-4`)
-  - Claude (Anthropic)
-  - Hugging Face (ex: `distilbert-base-uncased-finetuned-sst-2-english`)
+- As 5 palavras mais frequentes (ignorando stopwords).
+- Um resumo de sentimento do texto, utilizando a API pública de IA do Hugging Face (`pysentimiento/bertweet-pt-sentiment`).
 
 ### Opcional
 Adicionar um endpoint GET /search-term?term=... que retorne:
 - Se o termo informado foi encontrado na última análise.
-- Pode manter o histórico em cache/memória ou SQLite.
+- O histórico é mantido em cache/memória.
 
-### Tecnologias sugeridas
-- Linguagens: Node.js ou Python
-- Frameworks: Express, FastAPI, Django ou similar
-- Armazenamento: pode usar cache em memória, JSON local ou SQLite
-- Outras boas práticas:
-- Organização do código
-- Tratamento de erros
-- Uso de status codes HTTP adequados
-- Documentação simples (ex: Swagger ou README)
+### Tecnologias Utilizadas
+- **Linguagem:** Node.js
+- **Framework:** Express.js
+- **Bibliotecas:** `stopword` para remoção de stopwords, `axios` para requisições HTTP.
+- **Testes:** Jest
+- **Arquitetura:** Hexagonal Architecture
+- **Armazenamento:** Cache em memória
+
+### Como instalar e usar o projeto
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/samuel-prates/coodesh
+    cd coodesh
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure a variável de ambiente:**
+    Defina a variável de ambiente `HF_TOKEN` com o seu token de API do Hugging Face. Você pode obter um token em [Hugging Face Settings](https://huggingface.co/settings/tokens).
+
+    Exemplo (Linux/macOS):
+    ```bash
+    export HF_TOKEN="hf_YOUR_HUGGING_FACE_TOKEN"
+    ```
+    Exemplo (Windows - PowerShell):
+    ```powershell
+    $env:HF_TOKEN="hf_YOUR_HUGGING_FACE_TOKEN"
+    ```
+
+4.  **Execute a aplicação:**
+    ```bash
+    npm start
+    ```
+    A API estará disponível em `http://localhost:3000`.
+
+5.  **Execute os testes:**
+    ```bash
+    npm test
+    ```
 
 ## Readme do Repositório
 
@@ -55,4 +89,4 @@ Adicionar um endpoint GET /search-term?term=... que retorne:
 
 ## Suporte
 
-Para tirar dúvidas sobre o processo envie uma mensagem diretamente a um especialista no chat da plataforma. 
+Para tirar dúvidas sobre o processo envie uma mensagem diretamente a um especialista no chat da plataforma.

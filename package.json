@@ -1,0 +1,29 @@
+{
+  "name": "codash",
+  "version": "1.0.0",
+  "description": "Criar uma API simples que: \t1.\tAnalisa um texto de entrada. \t2.\tRetorna estatísticas básicas. \t3.\tIntegra com uma API pública de IA para detectar sentimento.",
+  "main": "src/infrastructure/web/server.js",
+  "scripts": {
+    "start": "node src/infrastructure/web/server.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuel-prates/codash.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuel-prates/codash/issues"
+  },
+  "homepage": "https://github.com/samuel-prates/codash#readme",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "express": "^5.1.0",
+    "stopword": "^3.1.5"
+  },
+  "devDependencies": {
+    "jest": "^30.0.4"
+  }
+}
