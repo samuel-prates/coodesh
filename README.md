@@ -78,7 +78,6 @@ Adicionar um endpoint GET /search-term?term=... que retorne:
 - Não esqueça o [.gitignore](https://www.toptal.com/developers/gitignore)
 - Se está usando github pessoal, referencie que é um challenge by coodesh:  
 
->  This is a challenge by [Coodesh](https://coodesh.com/)
 
 ## Finalização e Instruções para a Apresentação
 
@@ -90,3 +89,6 @@ Adicionar um endpoint GET /search-term?term=... que retorne:
 ## Suporte
 
 Para tirar dúvidas sobre o processo envie uma mensagem diretamente a um especialista no chat da plataforma.
+
+
+>  This is a challenge by [Coodesh](https://coodesh.com/)
